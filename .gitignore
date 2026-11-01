@@ -1,0 +1,12 @@
+target/
+node_modules/
+web/node_modules/
+dist/
+web/dist/
+.env*
+*.pem
+*.key
+credentials
+.DS_Store
+.vercel
+web/.vercel
