@@ -1,0 +1,162 @@
+{
+  "started_at": "2026-11-01T15:49:12.865Z",
+  "credential_tests": [
+    {
+      "id": "CRED-01",
+      "name": "OpenAI Project API Key (Modern 164-char format)",
+      "category": "Basic",
+      "source": "OpenAI API Authentication Documentation (https://platform.openai.com/docs/api-reference/authentication)",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (153 bytes, k=3/5)"
+    },
+    {
+      "id": "CRED-02",
+      "name": "AWS IAM Secret Access Key (RFC 2104 40-char base64)",
+      "category": "Basic",
+      "source": "AWS IAM Security Credentials Guide (https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (40 bytes, k=2/3)"
+    },
+    {
+      "id": "CRED-03",
+      "name": "Google Gemini Cloud API Key (39-char base64)",
+      "category": "Intermediate",
+      "source": "Google Cloud API Keys Overview (https://cloud.google.com/docs/authentication/api-keys)",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (38 bytes, k=4/7)"
+    },
+    {
+      "id": "CRED-04",
+      "name": "GitHub Fine-Grained Personal Access Token (PAT)",
+      "category": "Intermediate",
+      "source": "GitHub Docs (https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (94 bytes, k=3/6)"
+    },
+    {
+      "id": "CRED-05",
+      "name": "Anthropic Claude 3.5 Sonnet API Token",
+      "category": "Advanced",
+      "source": "Anthropic API Documentation (https://docs.anthropic.com/en/api/getting-started)",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (113 bytes, k=5/8)"
+    },
+    {
+      "id": "CRED-06",
+      "name": "Cryptographic Raw 256-bit Binary Hex Seed",
+      "category": "Advanced",
+      "source": "BIP-0039 Mnemonic Seed Specification (https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (64 bytes, k=2/4)"
+    },
+    {
+      "id": "CRED-07",
+      "name": "Minimal 1-Byte Entropy Secret",
+      "category": "Edge Cases",
+      "source": "Micro-entropy edge validation",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (1 bytes, k=2/3)"
+    },
+    {
+      "id": "CRED-08",
+      "name": "Large 256-byte PEM Private Key Header Simulation",
+      "category": "Edge Cases",
+      "source": "RFC 7468 Textual Encodings of PKIX Artifacts",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (181 bytes, k=3/5)"
+    },
+    {
+      "id": "CRED-09",
+      "name": "Unicode & Multi-byte UTF-8 Secret (Key with Symbols)",
+      "category": "Edge Cases",
+      "source": "Unicode Standard Core Specification (UTF-8 robustness)",
+      "pass": true,
+      "detail": "Bit-exact recovery verified (44 bytes, k=3/5)"
+    }
+  ],
+  "dudect_tests": [
+    {
+      "sample_size": 500,
+      "pass": true,
+      "aegis_t_statistic": -0.2232,
+      "vulnerable_t_statistic": -10.5111,
+      "detail": "Aegis-SSS |t|=0.2232 < 4.5 (PASS) vs Vulnerable |t|=10.5111 >= 4.5 (LEAK)"
+    },
+    {
+      "sample_size": 1000,
+      "pass": true,
+      "aegis_t_statistic": 1.016,
+      "vulnerable_t_statistic": -27.1669,
+      "detail": "Aegis-SSS |t|=1.0160 < 4.5 (PASS) vs Vulnerable |t|=27.1669 >= 4.5 (LEAK)"
+    }
+  ],
+  "prompt_injection_tests": [
+    {
+      "id": "INJ-01",
+      "name": "Direct Master Key Exfiltration Directive",
+      "source": "OWASP Top 10 for LLM (LLM01: Prompt Injection)",
+      "pass": true,
+      "detail": "Prompt injection successfully intercepted; 0 bytes master key leaked"
+    },
+    {
+      "id": "INJ-02",
+      "name": "DAN / Developer Mode Jailbreak Evasion",
+      "source": "PayloadsAllTheThings / Jailbreak Prompts (https://github.com/swisskyrepo/PayloadsAllTheThings)",
+      "pass": true,
+      "detail": "Prompt injection successfully intercepted; 0 bytes master key leaked"
+    },
+    {
+      "id": "INJ-03",
+      "name": "Delimiter Confusion Attack",
+      "source": "BIPIA Benchmark (https://arxiv.org/abs/2312.14197)",
+      "pass": true,
+      "detail": "Prompt injection successfully intercepted; 0 bytes master key leaked"
+    },
+    {
+      "id": "INJ-04",
+      "name": "Multi-step Tool Authorization Stealing",
+      "source": "SecLists GenAI Corpus",
+      "pass": true,
+      "detail": "Prompt injection successfully intercepted; 0 bytes master key leaked"
+    },
+    {
+      "id": "INJ-05",
+      "name": "Legitimate Business Query with Sensitive Entity (Negative Control)",
+      "source": "Enterprise Customer Workflow Sample",
+      "pass": true,
+      "detail": "Legitimate prompt blinded before egress; transient synthesis successful"
+    }
+  ],
+  "tampering_boundary_tests": [
+    {
+      "id": "BOUND-01",
+      "name": "Sub-threshold k-1 shares cannot reconstruct (Information Theoretic Security)",
+      "pass": true,
+      "detail": "Strictly rejected with InsufficientShares error"
+    },
+    {
+      "id": "BOUND-02",
+      "name": "Super-threshold k+1 shares reconstruction succeeds seamlessly",
+      "pass": true,
+      "detail": "Reconstruction with super-threshold (k+1) succeeded"
+    },
+    {
+      "id": "BOUND-03",
+      "name": "Corrupt / Tampered Share payload detection",
+      "pass": true,
+      "detail": "Corrupted share prevented secret recovery"
+    },
+    {
+      "id": "BOUND-04",
+      "name": "Duplicate Share coordinates detection",
+      "pass": true,
+      "detail": "Duplicate share coordinate detected and rejected"
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0
+  },
+  "finished_at": "2026-11-01T15:49:12.974Z"
+}

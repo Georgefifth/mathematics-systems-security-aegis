@@ -1,0 +1,12 @@
+Executing Dudect side-channel timing benchmark (1000 samples)...
+=== AEGIS CONSTANT-TIME SSS REPORT ===
+Algorithm: Aegis-SSS (Constant-Time Cauchy-Mersenne)
+Fixed Mean: 4075.19 ns | Random Mean: 3938.52 ns
+t-statistic: 1.0160 (Threshold: |t| < 4.5)
+Leakage Detected: false
+
+=== VULNERABLE COMPARATOR REPORT ===
+Algorithm: Vulnerable Baseline (Non-Constant-Time Table/Branch)
+Fixed Mean: 13.48 ns | Random Mean: 14.29 ns
+t-statistic: -27.1669
+Leakage Detected: true
