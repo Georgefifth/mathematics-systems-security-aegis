@@ -1,9 +1,9 @@
 # State
 
-- stage: 2
+- stage: 3
 - title: Mathematics for systems security
 - theme: AegisAgent — Side-Channel Resistant Zero-Knowledge Secret-Shared Enclave for Confidential AI Agents
-- acceptance: Theme selected by user (Direction 3). Ready for Stage 2 Architecture, UX Contract, Build, and Deployment.
-- evidence: evidence/stage-1-research.md
+- acceptance: Stage 2 build, UX contract, desktop/mobile screenshots, and Vercel deployment verified. Transitioning to Stage 3 QA.
+- evidence: evidence/stage-2-build.md
 - blockers:
-- updated: 2026-11-01 23:50
+- updated: 2026-11-02 00:10

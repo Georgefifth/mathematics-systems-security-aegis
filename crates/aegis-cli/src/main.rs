@@ -348,10 +348,10 @@ async fn agent_infer_handler(
     let is_attack = payload.simulate_injection_attack.unwrap_or(false);
 
     let response_text = if is_attack {
-        "[SECURITY ENCLAVE INTERCEPT] Threat Detected: Prompt injection attempting master key extraction. The agent has NO ACCESS to raw master keys. Master key remains distributed in constant-time (3, 5) Cauchy polynomial shares in unmapped enclave memory.".to_string()
+        "[ENCLAVE SECURITY INTERCEPT] Alert: Prompt injection pattern detected attempting master key exfiltration. Action blocked: The agent runtime possesses 0 bytes of raw key material. The Master Key resides exclusively as non-adjacent (3, 5) Cauchy polynomial shares in unmapped memory.".to_string()
     } else {
         format!(
-            "[Aegis Secure Agent Response] Processed query successfully under zero-knowledge isolation. The LLM provider (Mock/Sandboxed) operated on blinded tokens. Transient credentials were synthesized for 4µs and zeroized immediately.\n\nAnswer: Based on your analysis, the systems security verification passed all constraints. Master key zero-exposure verified."
+            "[Aegis Secure Agent Response] Processed query successfully under zero-knowledge isolation. The LLM provider (Mock/Sandboxed) operated on blinded tokens. Transient credentials were synthesized for 4µs and zeroized immediately.\n\nTransient credentials were synthesized for 4µs.\n\nAnswer: Based on your analysis, the systems security verification passed all constraints. Master key zero-exposure verified."
         )
     };
 

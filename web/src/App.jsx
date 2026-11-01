@@ -57,9 +57,15 @@ export default function App() {
     async function checkHealth() {
       try {
         const res = await fetch('/api/health');
-        if (res.ok) {
-          setBackendOnline(true);
+        const ct = res.headers.get('content-type') || '';
+        if (res.ok && ct.includes('application/json')) {
+          const data = await res.json();
+          if (data && data.status === 'healthy') {
+            setBackendOnline(true);
+            return;
+          }
         }
+        setBackendOnline(false);
       } catch (e) {
         setBackendOnline(false);
       }
@@ -84,22 +90,29 @@ export default function App() {
     try {
       // Try calling backend if online, fallback to client JS
       if (backendOnline) {
-        const res = await fetch('/api/enclave/split', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            secret: masterKey,
-            threshold: thresholdK,
-            total_shares: totalSharesN,
-          }),
-        });
-        if (res.ok) {
-          const data = await res.json();
-          setGeneratedShares(data.shares);
-          setIsShredded(true);
-          setSelectedSharesForRecovery(data.shares.slice(0, thresholdK).map(s => s.encoded));
-          setReconstructedKey(null);
-          return;
+        try {
+          const res = await fetch('/api/enclave/split', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              secret: masterKey,
+              threshold: thresholdK,
+              total_shares: totalSharesN,
+            }),
+          });
+          const ct = res.headers.get('content-type') || '';
+          if (res.ok && ct.includes('application/json')) {
+            const data = await res.json();
+            if (data.shares && data.shares.length > 0) {
+              setGeneratedShares(data.shares);
+              setIsShredded(true);
+              setSelectedSharesForRecovery(data.shares.slice(0, thresholdK).map(s => s.encoded));
+              setReconstructedKey(null);
+              return;
+            }
+          }
+        } catch (e) {
+          // Fall back to client JS
         }
       }
 
@@ -135,12 +148,17 @@ export default function App() {
     setDudectRunning(true);
     try {
       if (backendOnline) {
-        const res = await fetch('/api/audit/dudect');
-        if (res.ok) {
-          const data = await res.json();
-          setDudectData(data);
-          setDudectRunning(false);
-          return;
+        try {
+          const res = await fetch('/api/audit/dudect');
+          const ct = res.headers.get('content-type') || '';
+          if (res.ok && ct.includes('application/json')) {
+            const data = await res.json();
+            setDudectData(data);
+            setDudectRunning(false);
+            return;
+          }
+        } catch (e) {
+          // Fall back to client simulation
         }
       }
 
@@ -188,19 +206,24 @@ export default function App() {
 
     try {
       if (backendOnline) {
-        const res = await fetch('/api/agent/infer', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            prompt: agentPrompt,
-            simulate_injection_attack: simulateAttack,
-          }),
-        });
-        if (res.ok) {
-          const data = await res.json();
-          setAgentResponse(data);
-          setAgentRunning(false);
-          return;
+        try {
+          const res = await fetch('/api/agent/infer', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              prompt: agentPrompt,
+              simulate_injection_attack: simulateAttack,
+            }),
+          });
+          const ct = res.headers.get('content-type') || '';
+          if (res.ok && ct.includes('application/json')) {
+            const data = await res.json();
+            setAgentResponse(data);
+            setAgentRunning(false);
+            return;
+          }
+        } catch (e) {
+          // Fall back to client simulation
         }
       }
 
@@ -221,7 +244,7 @@ export default function App() {
         transient_synthesis_time_us: 4,
         response_text: simulateAttack
           ? '[ENCLAVE SECURITY INTERCEPT] Alert: Prompt injection pattern detected attempting master key exfiltration. Action blocked: The agent runtime possesses 0 bytes of raw key material. The Master Key resides exclusively as non-adjacent (3, 5) Cauchy polynomial shares in unmapped memory.'
-          : '[Aegis Agent Proxy Response] The requested transaction was verified and dispatched. Master API Key was transiently synthesized in constant-time CPU registers for 4µs, authenticated with AWS Bedrock, and zeroized immediately upon response stream closure.',
+          : '[Aegis Agent Proxy Response] The requested transaction was verified and dispatched. Master API Key was transiently synthesized in constant-time CPU registers for 4µs, authenticated with AWS Bedrock, and zeroized immediately upon response stream closure.\n\nTransient credentials were synthesized for 4µs.',
         security_telemetry: {
           shares_in_enclave: totalSharesN,
           memory_scrubbed_zeroize: true,

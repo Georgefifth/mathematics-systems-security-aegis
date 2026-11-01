@@ -1,0 +1,196 @@
+{
+  "base": "https://web-eta-bice-53.vercel.app",
+  "browser": "chromium",
+  "headed": false,
+  "startedAt": "2026-11-01T15:47:06.700Z",
+  "finishedAt": "2026-11-01T15:47:23.800Z",
+  "summary": {
+    "total": 14,
+    "pass": 14,
+    "fail": 0
+  },
+  "results": [
+    {
+      "viewport": "desktop",
+      "id": "enclave-shred",
+      "title": "Master Key Ingestion & Constant-Time Polynomial Shredding (P0)",
+      "status": "pass",
+      "ms": 1376,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/enclave-shred-shred-success-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "enclave-reconstruct",
+      "title": "Lagrange Dual Basis Threshold Reconstruction (P0)",
+      "status": "pass",
+      "ms": 1283,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/enclave-reconstruct-reconstruction-verified-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "sidechannel-audit",
+      "title": "Dudect Welch's t-test Timing Benchmark (P0)",
+      "status": "pass",
+      "ms": 1024,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/sidechannel-audit-dudect-audit-pass-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "agent-blind-infer",
+      "title": "Confidential AI Agent Pipeline & Blind Token Masking (P0)",
+      "status": "pass",
+      "ms": 1265,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/agent-blind-infer-agent-blind-success-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "attack-defense",
+      "title": "Prompt Injection Exfiltration Attack Interception (P1)",
+      "status": "pass",
+      "ms": 1269,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/attack-defense-attack-intercepted-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "invalid-input",
+      "title": "Input Validation & Threshold Bounds Guard (P1)",
+      "status": "pass",
+      "ms": 1130,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/invalid-input-validation-guards-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "latex-specs",
+      "title": "Cryptographer Track Mathematical Specification Rendering (P2)",
+      "status": "pass",
+      "ms": 972,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/latex-specs-latex-specification-desktop.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "enclave-shred",
+      "title": "Master Key Ingestion & Constant-Time Polynomial Shredding (P0)",
+      "status": "pass",
+      "ms": 1356,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/enclave-shred-shred-success-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "enclave-reconstruct",
+      "title": "Lagrange Dual Basis Threshold Reconstruction (P0)",
+      "status": "pass",
+      "ms": 1421,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/enclave-reconstruct-reconstruction-verified-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "sidechannel-audit",
+      "title": "Dudect Welch's t-test Timing Benchmark (P0)",
+      "status": "pass",
+      "ms": 1054,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/sidechannel-audit-dudect-audit-pass-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "agent-blind-infer",
+      "title": "Confidential AI Agent Pipeline & Blind Token Masking (P0)",
+      "status": "pass",
+      "ms": 1302,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/agent-blind-infer-agent-blind-success-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "attack-defense",
+      "title": "Prompt Injection Exfiltration Attack Interception (P1)",
+      "status": "pass",
+      "ms": 1363,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/attack-defense-attack-intercepted-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "invalid-input",
+      "title": "Input Validation & Threshold Bounds Guard (P1)",
+      "status": "pass",
+      "ms": 1072,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/invalid-input-validation-guards-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "latex-specs",
+      "title": "Cryptographer Track Mathematical Specification Rendering (P2)",
+      "status": "pass",
+      "ms": 1012,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/latex-specs-latex-specification-mobile.png"
+      ]
+    }
+  ]
+}
