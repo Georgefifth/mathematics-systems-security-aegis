@@ -1,6 +1,7 @@
 target/
 node_modules/
 web/node_modules/
+qa/node_modules/
 dist/
 web/dist/
 .env*
@@ -10,3 +11,5 @@ credentials
 .DS_Store
 .vercel
 web/.vercel
+evidence/stage-4-demo/demo.work/
+evidence/stage-4-demo/raw/

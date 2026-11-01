@@ -1,0 +1,228 @@
+[
+  {
+    "idx": 0,
+    "name": "cover",
+    "isCard": true,
+    "url": null,
+    "file": "/home/yap/Hack/mathematics-for-systems-security/evidence/stage-4-demo/raw/scene-00.webm",
+    "wallMs": 7177,
+    "trimStart": 0.2,
+    "focus": [],
+    "sfx": []
+  },
+  {
+    "idx": 1,
+    "name": "problem-compare",
+    "isCard": true,
+    "url": null,
+    "file": "/home/yap/Hack/mathematics-for-systems-security/evidence/stage-4-demo/raw/scene-01.webm",
+    "wallMs": 6519,
+    "trimStart": 0,
+    "focus": [],
+    "sfx": [
+      {
+        "type": "whoosh",
+        "t": 0.08
+      }
+    ]
+  },
+  {
+    "idx": 2,
+    "name": "live-shredder",
+    "isCard": false,
+    "session": "app",
+    "url": "http://localhost:3000",
+    "focus": [
+      {
+        "t": 2.16,
+        "x": 841,
+        "y": 275
+      },
+      {
+        "t": 2.83,
+        "x": 1436,
+        "y": 283
+      },
+      {
+        "t": 5.6,
+        "x": 335,
+        "y": 30
+      },
+      {
+        "t": 6.32,
+        "x": 866,
+        "y": 833
+      }
+    ],
+    "sfx": [
+      {
+        "type": "whoosh",
+        "t": 0.69
+      },
+      {
+        "type": "click",
+        "t": 2.78
+      },
+      {
+        "type": "whoosh",
+        "t": 3.49
+      },
+      {
+        "type": "click",
+        "t": 6.24
+      }
+    ],
+    "file": "/home/yap/Hack/mathematics-for-systems-security/evidence/stage-4-demo/raw/session-app.webm",
+    "range": [
+      0.09,
+      8.15
+    ]
+  },
+  {
+    "idx": 3,
+    "name": "live-audit",
+    "isCard": false,
+    "session": "app",
+    "url": "http://localhost:3000",
+    "focus": [
+      {
+        "t": 0.68,
+        "x": 609,
+        "y": 77
+      },
+      {
+        "t": 1.37,
+        "x": 1451,
+        "y": 190
+      },
+      {
+        "t": 4.31,
+        "x": 948,
+        "y": 571
+      }
+    ],
+    "sfx": [
+      {
+        "type": "click",
+        "t": 0.62
+      },
+      {
+        "type": "click",
+        "t": 1.32
+      },
+      {
+        "type": "whoosh",
+        "t": 2
+      }
+    ],
+    "file": "/home/yap/Hack/mathematics-for-systems-security/evidence/stage-4-demo/raw/session-app.webm",
+    "range": [
+      8.15,
+      14.56
+    ]
+  },
+  {
+    "idx": 4,
+    "name": "live-pipeline",
+    "isCard": false,
+    "session": "app",
+    "url": "http://localhost:3000",
+    "focus": [
+      {
+        "t": 0.65,
+        "x": 804,
+        "y": 82
+      },
+      {
+        "t": 1.33,
+        "x": 1447,
+        "y": 355
+      },
+      {
+        "t": 1.97,
+        "x": 1216,
+        "y": 232
+      },
+      {
+        "t": 2.59,
+        "x": 1447,
+        "y": 355
+      }
+    ],
+    "sfx": [
+      {
+        "type": "click",
+        "t": 0.6
+      },
+      {
+        "type": "click",
+        "t": 1.28
+      },
+      {
+        "type": "whoosh",
+        "t": 1.33
+      },
+      {
+        "type": "click",
+        "t": 1.93
+      },
+      {
+        "type": "click",
+        "t": 2.54
+      }
+    ],
+    "file": "/home/yap/Hack/mathematics-for-systems-security/evidence/stage-4-demo/raw/session-app.webm",
+    "range": [
+      14.56,
+      19.6
+    ]
+  },
+  {
+    "idx": 5,
+    "name": "arch-slide",
+    "isCard": true,
+    "url": null,
+    "file": "/home/yap/Hack/mathematics-for-systems-security/evidence/stage-4-demo/raw/scene-05.webm",
+    "wallMs": 6587,
+    "trimStart": 0,
+    "focus": [],
+    "sfx": [
+      {
+        "type": "whoosh",
+        "t": 0.14
+      }
+    ]
+  },
+  {
+    "idx": 6,
+    "name": "metrics-slide",
+    "isCard": true,
+    "url": null,
+    "file": "/home/yap/Hack/mathematics-for-systems-security/evidence/stage-4-demo/raw/scene-06.webm",
+    "wallMs": 6518,
+    "trimStart": 0,
+    "focus": [],
+    "sfx": [
+      {
+        "type": "whoosh",
+        "t": 0.07
+      }
+    ]
+  },
+  {
+    "idx": 7,
+    "name": "terminal-close",
+    "isCard": true,
+    "url": null,
+    "file": "/home/yap/Hack/mathematics-for-systems-security/evidence/stage-4-demo/raw/scene-07.webm",
+    "wallMs": 5515,
+    "trimStart": 0,
+    "focus": [],
+    "sfx": [
+      {
+        "type": "whoosh",
+        "t": 0.07
+      }
+    ]
+  }
+]
